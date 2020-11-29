@@ -15,33 +15,9 @@ function bot($method, $datas = []){
 function html($text){
     return str_replace(['<','>'],['&#60;','&#62;'],$text);
 };
-$update = json_decode(file_get_contents('php://input'));
+$update = json_decode(file_get_contents('php:input'));
 //test log
-file_put_contents("log.txt",file_get_contents('php://input'));
-{
-"update_id":502373783,
-  "message":{
-  "message_id":39,
-  "from":
-   {
-   "id":502373783,"is_bot":false,
-   "first_name":"Asadbek",
-   "last_name":"turg'unov",
-   "username":"asadbeknung_telegrami",
-   "language_code":"eng"
-   },
-  "chat":
-  {
-   "id":5023737831,
-   "first_name":"Asadbek",
-   "last_name":"turg'unov",
-   "username":"asadbeknung_telegrami",
-   "type":"private"
-  },
-"date":502373783,
-"text":"/start",
-"entities":[{"offset":0,"length":6,"type":"bot_command"}]}
-}
+file_put_contents("log.txt",file_get_contents('php:input'));
 // message variables
 $message = $update->message;
 $text = html($message->text);
